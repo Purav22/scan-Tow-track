@@ -75,4 +75,16 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="30dp"
         />
+
+    <ImageButton
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="signOut"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#FF6200EE"
+        app:srcCompat="@android:drawable/ic_lock_power_off"
+
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

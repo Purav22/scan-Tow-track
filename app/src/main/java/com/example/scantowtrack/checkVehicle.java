@@ -14,8 +14,5 @@ public class checkVehicle extends AppCompatActivity {
         setContentView(R.layout.activity_check_vehicle);
     }
 
-    public void checkForTow(View view) {
-        Intent intent = new Intent(this, statusOfTowing.class);
-        startActivity(intent);
-    }
+
 }

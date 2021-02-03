@@ -27,7 +27,7 @@
         />
 
     <EditText
-        android:id="@+id/mobileNumber"
+        android:id="@+id/email"
         android:layout_width="350dp"
         android:hint="Mobile Number"
         android:layout_height="wrap_content"
@@ -45,14 +45,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mobileNumber"
+        app:layout_constraintTop_toBottomOf="@id/email"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/login"
         android:text="Login"
-        android:onClick="loginMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"

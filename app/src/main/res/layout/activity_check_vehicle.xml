@@ -52,7 +52,6 @@
         tools:ignore="MissingConstraints" />
     <Button
         android:id="@+id/checkForTowing"
-        android:onClick="checkForTow"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vehicleNumber"
         android:layout_marginTop="20dp"

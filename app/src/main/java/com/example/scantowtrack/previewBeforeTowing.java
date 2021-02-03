@@ -14,17 +14,20 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.File;
 import java.io.IOException;
 
 public class previewBeforeTowing extends AppCompatActivity {
     private String currentPhotoPath;
-
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_before_towing);
+        mAuth = FirebaseAuth.getInstance();
 
 
     }
@@ -65,5 +68,12 @@ public class previewBeforeTowing extends AppCompatActivity {
     }
 
     public void conform(View view) {
+    }
+
+    public void signOut(View view) {
+        mAuth.signOut();
+        Intent intent = new Intent(previewBeforeTowing.this, LoginPage.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
