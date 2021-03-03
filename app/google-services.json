@@ -7,20 +7,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:224841647844:android:04164d631dd63b89b28ef1",
+        "mobilesdk_app_id": "1:224841647844:android:1338f83ee8d62186b28ef1",
         "android_client_info": {
           "package_name": "com.example.scantowtrack"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "224841647844-449645fhfja8uk2k01u22spqfrua17s8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.scantowtrack",
-            "certificate_hash": "f9e30f05bf9b81b3be77fbb35d826fd78f62251d"
-          }
-        },
         {
           "client_id": "224841647844-fk5d7r9mdi38q339a9lu3cr8mg3ln9o9.apps.googleusercontent.com",
           "client_type": 3

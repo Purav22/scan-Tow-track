@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +13,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,8 +32,8 @@ public class previewBeforeTowing extends AppCompatActivity {
         setContentView(R.layout.activity_preview_before_towing);
         mAuth = FirebaseAuth.getInstance();
 
-
-    }
+        ImageButton btn = findViewById(R.id.imageButton);
+        }
 
 
 
@@ -39,7 +42,7 @@ public class previewBeforeTowing extends AppCompatActivity {
         File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
         try {
-            File imageFile = File.createTempFile(fileName, ".jpeg", storageDirectory);
+            File imageFile = File.createTempFile(fileName, ".PNG", storageDirectory);
 
             currentPhotoPath = imageFile.getAbsolutePath();
 
@@ -63,6 +66,7 @@ public class previewBeforeTowing extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
 
             ImageView img = findViewById(R.id.numberPlate);
+
             img.setImageBitmap(bitmap);
         }
     }

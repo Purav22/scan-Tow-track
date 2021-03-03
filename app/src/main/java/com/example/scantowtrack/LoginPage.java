@@ -19,14 +19,15 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginPage extends AppCompatActivity {
     private EditText emailId,passWord;
     private Button loginbtn;
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
         emailId = findViewById(R.id.email);
         passWord = findViewById(R.id.password);
         loginbtn = findViewById(R.id.login);
@@ -39,42 +40,51 @@ public class LoginPage extends AppCompatActivity {
         });
     }
     public void login(){
-        String eMail = emailId.getText().toString();
-        String pass = passWord.getText().toString();
-        if (eMail.matches("")) {
+        String email = emailId.getText().toString();
+        String password = passWord.getText().toString();
+        if (email.matches("")) {
             Toast.makeText(this, "Please Enter Email", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        firebaseAuth.signInWithEmailAndPassword(eMail, pass)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            // Sign in success, update UI with the signed-in user's information
+                            //Log.d(TAG, "signInWithEmail:success");
+
+                            FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-
-                            Toast.makeText(LoginPage.this, "Sign in failed", Toast.LENGTH_LONG).show();
+                            //Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
                             updateUI(null);
-
+                            // ...
                         }
+
+                        // ...
                     }
                 });
 
     }
-    public  void onStart() {
+    @Override
+    public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        updateUI(currentUser);
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            updateUI(currentUser);
+        }
     }
     private void updateUI(FirebaseUser currentUser) {
         if(currentUser != null) {
             Intent intent = new Intent(this, previewBeforeTowing.class);
             startActivity(intent);
         }
-
     }
 
 

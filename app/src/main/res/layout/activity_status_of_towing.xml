@@ -13,6 +13,7 @@
         android:hint="Owner Name"
         android:textSize="30dp"
         android:paddingLeft="50dp"
+        android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
 
+
     <TextView
         android:id="@+id/towingDetails"
         app:layout_constraintTop_toBottomOf="@id/text"
@@ -41,4 +43,36 @@
         android:layout_height="300dp"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/owname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/towingDetails" />
+
+    <TextView
+        android:id="@+id/vehno"
+        android:layout_width="wrap_content"
+        android:text="Vehicle Number"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/owname" />
+
+    <TextView
+        android:id="@+id/fine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Fine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vehno" />
 </androidx.constraintlayout.widget.ConstraintLayout>
