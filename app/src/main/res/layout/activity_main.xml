@@ -10,17 +10,17 @@
         android:id="@+id/appImage"
         android:layout_width="220dp"
         android:layout_height="169dp"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/appimage"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/appimage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp"/>
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:text="Scan Tow &amp; Track"
         android:textColor="#123d5f"
         android:textSize="30dp"
@@ -28,7 +28,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appImage"
-
         />
 
     <Button

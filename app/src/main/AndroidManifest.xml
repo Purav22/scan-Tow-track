@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScanTowTrack">
-        <activity android:name=".takePicture"></activity>
+        <activity android:name=".splashAfterScan"></activity>
+        <activity android:name=".takePicture" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -24,14 +25,18 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".statusOfTowing"
-            android:parentActivityName=".checkVehicle"/>
-        <activity android:name=".previewBeforeTowing"
-            android:parentActivityName=".LoginPage"/>
-        <activity android:name=".LoginPage"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".checkVehicle"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".statusOfTowing"
+            android:parentActivityName=".checkVehicle" />
+        <activity
+            android:name=".previewBeforeTowing"
+            android:parentActivityName=".LoginPage" />
+        <activity
+            android:name=".LoginPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".checkVehicle"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

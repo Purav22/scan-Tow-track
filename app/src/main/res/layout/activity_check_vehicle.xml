@@ -41,15 +41,23 @@
 
     <EditText
         android:id="@+id/vehicleNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_border"
+        android:padding="16dp"
+        android:paddingLeft="10dp"
+
+        android:drawableStart="@drawable/ic_baseline_keyboard_24"
+        android:drawablePadding="16dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
         android:hint="Enter your vehicle number"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="50dp"
+        android:inputType="text"
         android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textNumber"
-        android:layout_marginTop="15dp"
         tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/checkForTowing"
         app:layout_constraintLeft_toLeftOf="parent"
